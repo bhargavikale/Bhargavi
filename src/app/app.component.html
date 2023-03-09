@@ -1,0 +1,20 @@
+<div>
+  <input type = "text" [(ngModel)]='inputText'>
+  <div>
+    <h5>Total Students: {{totalStudents | async}}</h5>
+  </div>
+  <div>
+    <table>
+      <tr>
+        <th>Student Name</th>
+        <th>Marks</th>
+        <th>Gender</th>
+      </tr>
+      <tr *ngFor="let std of students | filter :inputText">
+        <td>{{std.name}}</td>
+        <td>{{std.marks}}</td>
+        <td>{{std.gender}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
